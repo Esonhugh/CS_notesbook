@@ -1,0 +1,12 @@
+use docker shell:docker exec -ti <container-name> bash
+inspect/check a running container:docker inspect <container-name or-id>
+remove/rm all stopped containers:docker rm $(docker ps -pa)
+remove/rm all untagged images:docker rm $(docker images|grep "^<none>"|awk "{print $3}")
+copy files/floders between a container and your host:docker cp file.name mycontainer:/file.name
+start a container with an interactive shell:docker run -ti <image-name> /bin/bash
+list all　images: docker images
+list all containers:docker ps -a
+list all running containers:docker ps
+get the process ID(PID) for container:docker inspect --format{{.State.Pid}} <container-name or-id>
+list with pretty print the current mounted volumes for a container:docker inspect --format='{{json.Vo;umes}}' <container-id>|python -mjson.tool
+start docker deamon:docker -d
