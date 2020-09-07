@@ -18,7 +18,9 @@ echo "enter your command"
 cmd=$(sed 1q)
 echo "enter your notes wanna search/add"
 notes=$(sed 1q)
-echo \"$cmd\" notes \"$notes\" sure you want it?
+echo \"$cmd\" notes \"$notes\" sure you want it?[y/*]
+y-or-n=$(sed 1q)
+if   [ $y-or-n = "y" ]; then
 sleep 1
 clear
 case $cmd in
@@ -26,7 +28,7 @@ case $cmd in
                 echo $notes >> notebook
                 ;;
         s)
-                cat notebook|grep -n --color=auto $notes
+                cat notebook cheatsheet|grep -n --color=auto $notes
                 ;;
         i)
                 init
@@ -36,3 +38,4 @@ case $cmd in
                 ;;
 esac
 echo success!
+fi
