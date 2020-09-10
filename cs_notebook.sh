@@ -9,9 +9,9 @@ banner(){
 #####################start
 clear
 banner
-echo "command a:add a new note in exist notebook"
-echo "command s:search text in exist notebook"
-echo "command i:init"
+echo "*command a:add a new note in exist notebook"
+echo "*command s:search text in exist notebook"
+echo "*command i:init"
 banner
 
 echo "enter your command"
