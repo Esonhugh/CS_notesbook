@@ -10,3 +10,4 @@ list all running containers:docker ps
 get the process ID(PID) for container:docker inspect --format{{.State.Pid}} <container-name or-id>
 list with pretty print the current mounted volumes for a container:docker inspect --format='{{json.Vo;umes}}' <container-id>|python -mjson.tool
 start docker deamon:docker -d
+how to know how many command you can exec: find /usr/bin -perm -u=s -type f
